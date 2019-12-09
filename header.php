@@ -18,7 +18,7 @@
 
 <title>Ross & Ross</title>
 
-<link rel="stylesheet" href="https://use.typekit.net/ypi6ffg.css"><!--TYPEKIT INJECT-->
+<link rel="stylesheet" href="https://use.typekit.net/axv0hre.css"><!--TYPEKIT INJECT-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css"/>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.0/mapbox-gl-geocoder.css" type="text/css" />
@@ -33,7 +33,21 @@
 	<div id="page" class="site-wrapper">
 
         <header>
-            <h1>ASH AMEND</h1>
+        	<div class="container cols-4-8">
+        		<div class="col">
+            		<h1>logo</h1>
+            	</div>
+            	<div class="col">
+            		<nav id="nav">
+            			<?php
+                            wp_nav_menu(array(
+                            'theme_location'  => 'main-menu',
+                            'container_class' => 'mainMenu'
+                            ));
+                        ?>
+            		</nav>
+            	</div>
+        	</div>
         </header>
 
 		<main><!--closes in footer.php-->
