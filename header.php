@@ -33,7 +33,7 @@
 	<div id="page" class="site-wrapper">
 
         <header>
-            <h1>SOMETHIGN IN HERE</h1>
+            <h1>ASH AMEND</h1>
         </header>
 
 		<main><!--closes in footer.php-->
