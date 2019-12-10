@@ -14,11 +14,12 @@ get_header();?>
 <?php if( have_rows('introduction') ):
     		while( have_rows('introduction') ): the_row(); ?>
 	<div id="introduction" class="boxed-content">
-		<div class="container cols-offset4-16 text-center">
+		<div class="container cols-offset4-16 text-center read_more_container">
 			<div class="col">
 				<h2><?php the_sub_field('introduction_heading');?></h2>
-				<p><?php the_sub_field('introduction_text');?></p>
-				<a class="button"><span><?php the_sub_field('introduction_read_more');?></span></a>
+				<?php the_sub_field('introduction_text');?>
+				<?php the_sub_field('introduction_text_read_more');?>
+				<a class="button read-more" href="#"><span><?php the_sub_field('introduction_read_more');?></span></a>
 			</div>
 		</div>
 	</div>

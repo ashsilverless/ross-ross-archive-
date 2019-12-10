@@ -90,11 +90,9 @@ jQuery(document).ready(function($) {
     $(".menu-trigger").toggleClass("opened");
   });
 
-  $(".read-more").click(function() {
-    $(this)
-      .prev()
-      .slideToggle();
-    $(this).text($(this).text() == "Read more" ? "Read less" : "Read more");
+  $(".read-more").click(function(e) {
+    e.preventDefault();
+    $(this).prev().slideToggle();
   });
 
   $(".tab-trigger").click(function() {
