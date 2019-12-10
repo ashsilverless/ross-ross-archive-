@@ -33,20 +33,28 @@
 	<div id="page" class="site-wrapper">
 
         <header>
-        	<div class="container cols-4-8">
-        		<div class="col">
-            		<h1>logo</h1>
+        	<div class="container cols-10-10-4">
+        		<div class="col" id="logo">
+            		<span style="font-size:2rem;">logo</span>
             	</div>
             	<div class="col">
             		<nav id="nav">
             			<?php
                             wp_nav_menu(array(
                             'theme_location'  => 'main-menu',
-                            'container_class' => 'mainMenu'
+                            'container_class' => 'mainMenu',
                             ));
                         ?>
             		</nav>
             	</div>
+            	<?php if( have_rows('contact_info', 'options') ):
+            		while( have_rows('contact_info', 'options') ): the_row(); ?>
+		            	<div class="col">
+		            		<div class="contact">
+			                     <a href="tel:<?php the_sub_field("phone"); ?>"><?php the_sub_field("phone"); ?></a>
+			                </div>
+			            </div>
+                <?php endwhile; endif;?>
         	</div>
         </header>
 

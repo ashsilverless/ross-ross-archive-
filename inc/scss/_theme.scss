@@ -3,6 +3,17 @@
 /*===========GLOBAL==========*/
 
 /*===========HEADER==========*/
+header{
+	height: 5rem;
+	.container{
+		min-height:100%;
+		>.col{
+			display: grid;
+			align-items: center;
+		}
+	}
+}
+
 
 /*===========BODY==========*/
 

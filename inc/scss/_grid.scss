@@ -215,6 +215,17 @@
             grid-column: span 8;     
         }   
     }
+    &.cols-10-10-4{
+        >.col:nth-of-type(3n - 2) {
+            grid-column: span 10;
+        }
+        >.col:nth-of-type(3n -1) {
+            grid-column: span 10;
+        }
+        >.col:nth-of-type(3n) {
+            grid-column: span 4;
+        }
+    }
     
 }
 /*===========MEDIA QUERIES==========*/
