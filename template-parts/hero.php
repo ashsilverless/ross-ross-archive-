@@ -22,11 +22,14 @@ endif;?>
 	                </div>
 	                <div class="company-copy">
 	                    <h3>
-	                    	<?php the_field('hero_copy');?>
+	                    	<?php the_field('hero_subheading');?>
 	                    </h3>
 	                </div>
 	                <div id="scroll-icon">
-	                	<span></span>
+	                	<?php if( have_rows('button') ):
+    						while( have_rows('button') ): the_row(); ?>
+	                			<a href="<?php the_sub_field('button_target');?>" class="explore"><span></span></a>
+	                	<?php endwhile; endif;?>
 	                </div>
                 </div>
 		    </div>
