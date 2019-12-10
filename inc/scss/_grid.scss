@@ -178,7 +178,18 @@
             grid-column: span 6;     
         }     
     }
-
+    &.cols-offset4-16  {
+        >.col {
+            grid-column-start:6;     
+            grid-column-end:20;    
+        }    
+    }
+    &.cols-offset5-14  {
+        >.col {
+            grid-column-start:8;     
+            grid-column-end:18;    
+        }    
+    }
 
     &.cols-14-10 {
         >.col:nth-of-type(2n -1) {
@@ -226,7 +237,17 @@
             grid-column: span 4;
         }
     }
-    
+    &.cols-7-10-7{
+        >.col:nth-of-type(3n - 2) {
+            grid-column: span 7;
+        }
+        >.col:nth-of-type(3n -1) {
+            grid-column: span 10;
+        }
+        >.col:nth-of-type(3n) {
+            grid-column: span 7;
+        }
+    }
 }
 /*===========MEDIA QUERIES==========*/
 

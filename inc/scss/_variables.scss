@@ -5,7 +5,7 @@ $brand-primary-light: hsl(73, 11%, 75%); // Light Green
 $brand-primary-dark: hsl(73, 11%, 30%); //Dark Green
 $brand-secondary: hsl(223, 71%, 13%); //Dark Blue
 $brand-tertiary: hsl(37, 100%, 50%);
-$brand-light-grey: hsl(0, 0%, 80%);
+$brand-light-grey: hsl(0, 0%, 96%);
 $brand-mid-grey: hsl(0, 0%, 50%);
 $brand-dark-grey: hsl(0, 0%, 15%);
 $body-bg: hsl(0, 0%, 100%);
@@ -35,4 +35,6 @@ $brandBorderStyle: solid;
 
 $contentPadding: 2em 3em;
 
-$headerHeight: 5rem
+$headerHeight: 5rem;
+
+$fontSize: 1.3rem;

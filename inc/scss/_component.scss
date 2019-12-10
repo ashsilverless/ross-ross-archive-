@@ -354,3 +354,44 @@ a.next-section {
 	}
 }
 
+.silverless {
+    text-align: center;
+    margin-top: -5px;
+ 
+    #logo {
+        width: 100px;
+        height: 30px;
+    }
+
+    #silverless {
+        opacity:0.6;
+        transition:opacity 0.5s ease-in-out;
+    
+        path {
+            fill: white;
+        }
+    }
+
+    #created {
+        opacity:0;
+        transform: translateY(50px);
+        transition: 1s transform ease, 2s opacity ease;
+
+        path {
+            fill: white;
+        }
+    }
+
+    &:hover {
+        cursor:pointer;
+
+        #silverless {
+            opacity:0.8;
+        }
+
+        #created {
+              opacity:0.8;
+              transform: translateY(0);
+        }
+    }
+}
