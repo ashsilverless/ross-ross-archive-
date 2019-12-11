@@ -35,7 +35,7 @@
         <header>
         	<div class="container cols-10-10-4">
         		<div class="col" id="logo">
-            		<span style="font-size:2rem;">logo</span>
+            		<a href="<?php echo get_home_url(); ?>"><span style="font-size:2rem;">logo</span></a>
             	</div>
             	<div class="col">
             		<nav id="nav">

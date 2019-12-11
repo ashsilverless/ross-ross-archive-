@@ -7,7 +7,7 @@
 
 </main>
 
-<footer class="footer">
+<footer class="footer <?php if (is_page_template('page-templates/home.php')) {?>home_footer<?php }?>">
 
 	<div class="pre-socket"></div><!--pre-socket-->
 
@@ -22,8 +22,8 @@
 			</div>
 
 			<div class="col mandatory">
-				<div>
-					<img src="https://via.placeholder.com/150x150"><br/>
+				<div id="regulated">
+					<?php get_template_part("inc/img/RICS"); ?><br/>
 				</div>
 				<div>
 					<a href="<?php echo home_url() . '/terms-conditions'; ?>">Terms</a>

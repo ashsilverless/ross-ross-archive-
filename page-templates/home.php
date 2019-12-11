@@ -35,10 +35,13 @@ get_header();?>
 					while( have_rows('section_blocks') ): the_row();
 						$colour = get_sub_field_object( 'cta_colour' );
 						$colourValue = $colour['value'];
+						$image = get_sub_field('background_image');
 						?>
-					<div class="overview-block" style="background-image:url('https://via.placeholder.com/800x800');">
-						<h3><?php the_sub_field('title');?></h3>
-						<a class="button <?php echo esc_attr($colourValue);?>" href=""><span><?php the_sub_field('cta_title');?></span></a>
+					<div class="overview-block" style="background-image:url(<?php echo $image['url']; ?>);">
+						<div>
+							<h3><?php the_sub_field('title');?></h3>
+							<a class="button <?php echo esc_attr($colourValue);?>" href=""><span><?php the_sub_field('cta_title');?></span></a>
+						</div>
 					</div>
 				<?php endwhile; endif;?>
 			</div>

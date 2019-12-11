@@ -67,6 +67,7 @@ blockquote{
 	position: relative;
 	font-family: $brand-font;
 	letter-spacing: 2px;
+	line-height: $fontSize*1.5;
 	font-size: $fontSize*1.1;
 	margin-top: 8rem;
 	margin-bottom: 8rem;
@@ -80,12 +81,12 @@ blockquote{
 	&:after{
 		content: '\201D';
 		right: -5rem;
-		bottom:-1rem;
+		bottom:2rem;
 	};
 	&:before{
 		content: '\201C';
 		left: -5rem;
-		top:-3rem;
+		top:0rem;
 	};
 	footer{
 		padding-top: 3rem;
@@ -113,16 +114,26 @@ header{
 /*===========BODY==========*/
 .hero{
 	color: white;
+	position: relative;
+	&:before{
+		position:absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(black, 0.6);
+		z-index: 1;
+	}
 	.container{
 		width: 80%;
 		text-align: center;
 		align-content: center;
+		display: relative;
+		z-index: 2;
 		h1{
 			font-size:3.5rem;
-			letter-spacing: 6px;
-			font-family: $body-font;
 			font-weight:300;
-			text-transform: uppercase;
 		}
 		h2{
 			font-size:1.4rem;
@@ -141,6 +152,13 @@ header{
 		.company-copy{
 			margin-top: 10vh;
 			margin-bottom: 10vh;
+		}
+		.home_hero{
+			h1{
+				font-family: $body-font;
+				text-transform: uppercase;
+				letter-spacing: 6px;
+			}
 		}
 	}
 	#scroll-icon{
@@ -178,12 +196,32 @@ header{
 	display: flex;
 	.overview-block{
 		padding: 3rem;
-		background-size:cover;
+		background-size:100%;
 		background-repeat: no-repeat;
 		background-position: center;
 		color: white;
 		width: inherit;
 		margin-right:2rem;
+		position: relative;
+		transition:$slowEffect;
+		&:hover{
+			background-size:120%;
+			transition:$slowEffect;
+		}
+		> div {
+			position:relative;
+			z-index: 2;
+		}
+		&:before{
+			position:absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(black, 0.6);
+			z-index: 1;
+		}
 		&:last-of-type{
 			margin-right:0;
 		}
@@ -192,6 +230,47 @@ header{
 			font-weight: 300;
 			text-transform: uppercase;
 			padding: 3rem 0;
+		}
+	}
+}
+.services{
+	.services-container{
+		background-color:$brand-primary;
+		.services-tab{
+			display: flex;
+			justify-content: space-between;
+			color: white;
+			text-transform:uppercase;
+			.tab{
+				width: inherit;
+				padding:3rem 0;
+				position:relative;
+				transition:$fastEffect;
+				&:hover{
+					cursor: pointer;
+					background-color: white;
+					color: $brand-primary;
+					transition:$fastEffect;
+				}
+				&.selected{
+					&:before{
+						width: 3rem;
+						height: 3rem;
+						background-color:$brand-primary;
+						position: absolute;
+						bottom:-1.5rem;
+						left: 50%;
+						transform: translateX(-50%) rotate(45deg);
+						content: '';
+						transition:$fastEffect;
+					}
+					&:hover:before{
+						cursor: pointer;
+						background-color: white;
+						transition:$fastEffect;
+					}
+				}
+			}
 		}
 	}
 }
@@ -214,5 +293,13 @@ footer{
 	}
 	.socket > div{
 		align-items: flex-end;
+	}
+	#regulated{
+		margin-bottom: 2rem; 
+	}
+	&.home_footer{
+		.pre-socket, .socket{
+			background-color:$brand-primary;
+		}
 	}
 }
