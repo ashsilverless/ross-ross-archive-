@@ -363,6 +363,18 @@ header{
 	}
 	a{
 		color: $brand-secondary;
+		&.button:hover{
+			color: white;
+		}
+	}
+}
+#contact{
+	height: 100vh;
+	background-size:cover;
+	background-position:center;
+	background-repeat: no-repeat;
+	h1{
+		text-transform: uppercase;
 	}
 }
 
