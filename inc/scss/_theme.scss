@@ -98,6 +98,17 @@ blockquote{
 	}
 }
 
+.green{
+	&#introduction, .services-container, .services-container .tab.selected:before, .contact-cta{
+		background-color: $brand-primary;
+	}
+}
+.blue{
+	&#introduction, .services-container, .services-container .tab.selected:before, .contact-cta{
+		background-color: $brand-secondary;
+	}
+}
+
 /*===========HEADER==========*/
 header{
 	height: $headerHeight;
@@ -185,7 +196,6 @@ header{
 }
 
 #introduction{
-	background-color: $brand-primary;
 	color: white;
 }
 #residential-hospitality{
@@ -205,7 +215,7 @@ header{
 		position: relative;
 		transition:$slowEffect;
 		&:hover{
-			background-size:120%;
+			background-size:110%;
 			transition:$slowEffect;
 		}
 		> div {
@@ -235,7 +245,6 @@ header{
 }
 .services{
 	.services-container{
-		background-color:$brand-primary;
 		.services-tab{
 			display: flex;
 			justify-content: space-between;
@@ -246,6 +255,11 @@ header{
 				padding:3rem 0;
 				position:relative;
 				transition:$fastEffect;
+				z-index: 2;
+				img{
+					height: 3rem;
+					margin-bottom:2rem;
+				}
 				&:hover{
 					cursor: pointer;
 					background-color: white;
@@ -256,13 +270,15 @@ header{
 					&:before{
 						width: 3rem;
 						height: 3rem;
-						background-color:$brand-primary;
 						position: absolute;
-						bottom:-1.5rem;
+						bottom:0;
 						left: 50%;
-						transform: translateX(-50%) rotate(45deg);
+						transform: translate(-50%, 52%) rotate(45deg);
 						content: '';
 						transition:$fastEffect;
+						border-right:2px solid white;
+						border-bottom:2px solid white;
+						z-index: 1;
 					}
 					&:hover:before{
 						cursor: pointer;
@@ -270,6 +286,31 @@ header{
 						transition:$fastEffect;
 					}
 				}
+			}
+		}
+	}
+	.services-content-container{
+		padding:5rem 0;
+		background-color:$brand-mid-grey;
+		color: white;
+		margin-top: 0.5rem;
+		.col{
+			position:relative;
+		}
+		.services-tab-content{
+			visibility: hidden;
+			opacity: 0;
+			transition:$fastEffect;
+			position:absolute;
+			top: 0;
+			left: 0;
+			&.selected{
+				visibility: visible;
+				opacity: 1;
+				transition:$fastEffect;
+			}
+			h3{
+				text-transform: uppercase;
 			}
 		}
 	}

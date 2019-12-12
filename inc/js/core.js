@@ -228,4 +228,18 @@ jQuery(document).ready(function($) {
   $("a.control_next").click(function() {
     moveRight();
   });
+
+  //Tabs
+  var initialHeight = $('.services-content-container').find('.services-tab-content').height();
+  $('.services-content-container').css('height', (initialHeight + 200))
+
+  $('.services-tab .tab').on('click', function(){
+    var selectedTab = $(this).attr('data-tab');
+    var tabHeight = $('#' + selectedTab).height();
+    $('.services-tab .tab').removeClass('selected');
+    $(this).addClass('selected');
+    $('.services-tab-content').removeClass('selected');
+    $('.services-content-container').css('height', (tabHeight + 200))
+    $('#' + selectedTab).addClass('selected');
+  })
 }); //Don't remove ---- end of jQuery wrapper

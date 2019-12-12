@@ -46,27 +46,17 @@ get_header();?>
 				<?php endwhile; endif;?>
 			</div>
 		</div>
-		<div class="container cols-offset4-16 text-center">
-			<div class="col">
-			<?php if( have_rows('testimonial') ):
-    			while( have_rows('testimonial') ): the_row(); ?>
-				<blockquote>
-					<?php the_sub_field('testimonial_content');?>
-					<footer><?php the_sub_field('customer_name');?></footer>
-				</blockquote>
-			</div>
-			<?php endwhile; endif;?>
-		</div>
-		<div class="container cols-offset5-14 text-center">
-			<?php if( have_rows('contact_box') ):
-    			while( have_rows('contact_box') ): the_row(); ?>
-				<div class="col contact-cta">
-					<i class="fas fa-comments"></i><br/>
-					<p><?php the_sub_field('title');?></p>
-					<a class="button" href="<?php the_sub_field('cta_link');?>"><span><?php the_sub_field('cta_title');?></span></a>
-				</div>
-			<?php endwhile; endif;?>
-		</div>
+
+		<?php if( have_rows('testimonial') ):
+			while( have_rows('testimonial') ): the_row(); ?>
+				<?php get_template_part("template-parts/testimonial"); ?>
+		<?php endwhile; endif;?>
+
+		<?php if( have_rows('contact_box') ):
+			while( have_rows('contact_box') ): the_row(); ?>
+				<?php get_template_part("template-parts/contact-box"); ?>
+		<?php endwhile; endif;?>
+		
 	</div>
 <?php endwhile; endif;?>
 <?php get_footer();?>
