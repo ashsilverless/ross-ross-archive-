@@ -76,10 +76,16 @@ $colour = get_field('page_colour')
     			<div class="col services-tab">
 	    			<?php if( have_rows('section_content') ):
 	    				$row = 1;
-	    				while( have_rows('section_content') ): the_row(); ?>
+	    				while( have_rows('section_content') ): the_row();
+	    					$icon = get_sub_field('icon');?>
 	    					<div class="services-tab-content <?php if($row == 1) {echo 'selected';}?>" id="services-tab-<?php echo get_row_index(); ?>">
-	    						<h3><?php the_sub_field('title');?></h3>
-								<?php the_sub_field('content');?>
+	    						<div class="icon text-center">
+	    							<img src="<?php echo $icon['url']; ?>" alt="<?php the_sub_field('title');?>" />
+	    						</div>
+	    						<div class="content">
+		    						<h3><?php the_sub_field('title');?></h3>
+									<?php the_sub_field('content');?>
+								</div>
 							</div>
 	    			<?php $row++; endwhile; endif;?>
 	    		</div>
