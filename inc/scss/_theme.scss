@@ -11,6 +11,9 @@ body{
 .text-center{
 	text-align: center;
 }
+.text-left{
+	text-align: left;
+}
 h1, h2, h3, h4, h5, h6{
 	font-family: $brand-font;
 }
@@ -373,8 +376,17 @@ header{
 	background-size:cover;
 	background-position:center;
 	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items:stretch;
+	flex-direction: column;
+	color: white;
 	h1{
 		text-transform: uppercase;
+		color: white;
+	}
+	a{
+		color: white;
 	}
 }
 

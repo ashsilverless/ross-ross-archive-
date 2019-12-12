@@ -9,20 +9,34 @@ get_header();?>
 <?php if( have_rows('page_settings') ):
     while( have_rows('page_settings') ): the_row(); 
     $image = get_sub_field('background_image');?>
-<div id="contact" style="background-image: url(<?php echo $image['url']; ?>);" class="hero">
-	<div class="container cols-24 text-center">
-		<div class="col">
+<div id="contact" style="background-image: url(<?php echo $image['url']; ?>);">
+	<div class="container title">
+		<div class="col text-center">
 			<h1><?php the_sub_field('title');?></h1>
 		</div>
 	</div>
-	<div class="container cols-10-4-10 text-center">
-		<div class="col">
-			<h1><?php the_sub_field('title');?></h1>
-		</div>
-		<div class="col"></div>
-		<div class="col">
-			<h1><?php the_sub_field('title');?></h1>
-		</div>
+	<div class="container cols-10-4-10 text-left">
+		<?php if( have_rows('contact_info', 'options') ):
+            		while( have_rows('contact_info', 'options') ): the_row(); ?>
+			<div class="col">
+				<div>
+					<a href="tel:<?php the_sub_field("mobile"); ?>"><?php the_sub_field("mobile"); ?></a>
+				</div>
+				<div>
+					<a href="tel:<?php the_sub_field("phone"); ?>"><?php the_sub_field("phone"); ?></a>
+				</div>
+				<div>
+					<a href="tel:<?php the_sub_field("email"); ?>"><?php the_sub_field("email"); ?></a>
+				</div>
+				<div>
+					<?php the_sub_field("address"); ?>
+				</div>
+			</div>
+			<div class="col"></div>
+			<div class="col">
+				
+			</div>
+		<?php endwhile; endif;?>
 	</div>
 </div>
 <?php endwhile; endif;?>
