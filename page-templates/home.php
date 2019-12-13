@@ -13,7 +13,7 @@ get_header();?>
 <!--INTRODUCTION-->
 <?php if( have_rows('introduction') ):
     		while( have_rows('introduction') ): the_row(); ?>
-	<div id="introduction" class="boxed-content">
+	<div id="introduction" class="boxed-content green">
 		<div class="container cols-offset4-16 text-center read_more_container">
 			<div class="col">
 				<h2><?php the_sub_field('introduction_heading');?></h2>

@@ -14,8 +14,9 @@ endif;?>
                 	<div class="company-title">
                 		<?php if (is_page_template('page-templates/home.php')) {?>
                 			<img src="https://via.placeholder.com/300x150">
-                		<?php }?>
-	                	
+                		<?php } elseif ('case_studies' == get_post_type()) {?>
+                			<span class="case_study_title">Case Study</span>
+	                	<?php } ?>
 	                    <h1 class="heading heading__md heading__light mt0 mb0">
 	                    	<?php the_field('hero_heading');?>
 	                    </h1>

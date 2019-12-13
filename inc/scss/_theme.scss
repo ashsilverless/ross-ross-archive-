@@ -376,11 +376,11 @@ header{
 	background-size:cover;
 	background-position:center;
 	background-repeat: no-repeat;
-	display: flex;
-	justify-content: center;
-	align-items:stretch;
-	flex-direction: column;
 	color: white;
+	> .container{
+		align-content: center;
+		height: 100%;
+	}
 	h1{
 		text-transform: uppercase;
 		color: white;
@@ -388,6 +388,41 @@ header{
 	a{
 		color: white;
 	}
+}
+#contact_form{
+	input, textarea{
+		padding:1rem;
+		width: 100%;
+		margin-bottom:1rem;
+		transition: $fastEffect;
+		&[type=submit]{
+			background-color:$brand-secondary;
+			color: white;
+			width: auto;
+			text-transform:uppercase;
+			padding:0 3rem;
+			font-weight:700;
+			font-size: $fontSize;
+			line-height: 3rem;
+			position:relative;
+			transition: $fastEffect;
+			&:hover{
+				cursor: pointer;
+				color: $brand-secondary;
+				background-color:white;
+				transition: $fastEffect;
+			};
+		}
+		&:focus{
+			border:2px solid $brand-secondary;
+			transition: $fastEffect;
+		}
+	}
+}
+.case_study_title{
+	text-transform: uppercase;
+	font-size: $fontSize*0.8;
+	font-weight: 700;
 }
 
 

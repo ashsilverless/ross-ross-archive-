@@ -108,6 +108,10 @@ function rossross_manage_admin_bar(){
 	$wp_admin_bar->remove_menu('comments');
 }
 
+/**= Add Custom Post Types and Taxonomies =**/
+
+require_once ('custom-post-types.php');
+
 /* ADD CUSTOM RESPONSIVE IMAGE SIZES
 ================================================== */
 
