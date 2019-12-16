@@ -95,6 +95,10 @@ $colour = get_field('page_colour')
 
 <?php endwhile; endif;?>
 
+<!-- CASE STUDIES -->
+
+<?php get_template_part("template-parts/case-studies-list"); ?>
+
 <div class="boxed-content <?php echo $colour;?>">
 	<!--TESTIMONIAL-->
 	<?php if( have_rows('testimonial') ):

@@ -53,6 +53,30 @@ $colour = get_field('page_colour')
 	</div>
 <?php endwhile; endif;?>
 
+<!--GALLERY-->
+<div class="container cols-24">
+	
+	<div class="col gallery">
+		
+		<?php 
+		$images = get_field('gallery');
+		if( $images ): ?>
+		        <?php foreach( $images as $image ): ?>
+		            <div class="img-wrapper">
+		                <a href="<?php echo esc_url($image['url']); ?>">
+		                     <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+		                </a>
+		                <p><?php echo esc_html($image['caption']); ?></p>
+		            </div>
+		        <?php endforeach; ?>
+		<?php endif; ?>
+	</div>
+</div>
+
+<!-- CASE STUDIES -->
+
+<?php get_template_part("template-parts/case-studies-list"); ?>
+
 
 	<!--TESTIMONIAL-->
 <?php if( have_rows('testimonial') ):
