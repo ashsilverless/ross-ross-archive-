@@ -50,19 +50,22 @@ jQuery(document).ready(function($) {
       });
   });
 
-  $(".single-image").magnificPopup({
-    type: "image",
-    closeOnContentClick: true,
-    closeBtnInside: false,
-    fixedContentPos: true,
-    mainClass: "mfp-no-margins mfp-with-zoom",
-    image: {
-      verticalFit: true
-    },
-    zoom: {
-      enabled: true,
-      duration: 300
-    }
+  /* Magnific Popup */
+
+  $(".img-wrapper").each(function(gallery) {
+    $(this).magnificPopup({
+      delegate: 'a',
+      type: 'image',
+      closeOnContentClick: true,
+      closeBtnInside: false,
+      image: {
+        verticalFit: true,
+      },
+      gallery: {
+        enabled: true,
+        navigateByImgClick: true,
+      },
+    });
   });
 
   $(".post-image a").magnificPopup({

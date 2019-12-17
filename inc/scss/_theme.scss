@@ -275,6 +275,8 @@ header{
 				z-index: 2;
 				padding:3rem 0;
 				width: inherit;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
 				transition:$fastEffect;
 				img{
 					margin-bottom:2rem;
@@ -282,14 +284,13 @@ header{
 				}
 				&:hover{
 					transition:$fastEffect;
-					background-color: white;
+					border-left: 5px solid white;
+					border-right: 5px solid white;
 					cursor: pointer;
-					color: $brand-primary;
 				}
 				&.selected{
 					&:hover:before{
 						transition:$fastEffect;
-						background-color: white;
 						cursor: pointer;
 					}
 					&:before{
@@ -354,13 +355,14 @@ header{
 	}
 }
 #team{
+	background-color: $brand-light-grey;
 	img{
 		max-height: 18rem;
 	}
 	.image_placeholder{
 		width: 100%;
 		padding-bottom:66%;
-		background-color:$brand-light-grey;
+		background-color:rgba($brand-mid-grey, 0.1);
 	}
 	.name{
 		margin-bottom: 0.5rem;
@@ -387,7 +389,7 @@ header{
 	color: white;
 	> .container{
 		align-content: center;
-		height: 100%;
+		min-height: 100vh;
 		padding: 5rem;
 	}
 	h1{
@@ -470,6 +472,15 @@ header{
 
 		&:nth-of-type(11n - 3), &:nth-of-type(11n - 2), &:nth-of-type(11n - 1), &:nth-of-type(11n)  {
 			grid-column: span 12;
+		}
+		a{
+			background-color:black;
+			opacity: 0;
+			transition: $fastEffect;
+			&:hover{
+				opacity: 0.4;
+				transition: $fastEffect;
+			};
 		}
 	}
 }
