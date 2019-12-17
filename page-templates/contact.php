@@ -36,7 +36,7 @@ get_header();?>
 						</div>
 					</div>
 				<?php endwhile; endif;?>
-					<div class="col" id="contact_form">
+					<div class="col slow-fade" id="contact_form">
 						<?php if( get_sub_field('contact_form_shortcode') ): ?>
 							<?php echo do_shortcode( get_sub_field('contact_form_shortcode') ); ?>
 						<?php endif; ?>

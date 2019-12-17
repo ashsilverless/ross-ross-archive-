@@ -17,15 +17,15 @@ endif;?>
                 		<?php } elseif ('case_studies' == get_post_type()) {?>
                 			<span class="case_study_title">Case Study</span>
 	                	<?php } ?>
-	                    <h1 class="heading heading__md heading__light mt0 mb0">
+	                    <h1 class="heading heading__md heading__light mt0 mb0 slow-fade">
 	                    	<?php the_field('hero_heading');?>
 	                    </h1>
-	                    <h2>
+	                    <h2 class="slow-fade">
 	                    	<?php the_field('hero_subheading');?>
 	                    </h2>
 	                </div>
 	                <div class="company-copy">
-	                    <h3>
+	                    <h3 class="slow-fade delay">
 	                    	<?php the_field('hero_copy');?>
 	                    </h3>
 	                </div>

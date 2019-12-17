@@ -15,7 +15,7 @@ if($caseStudy && sizeof($caseStudy) > 0): ?>
 		<?php foreach($caseStudy as $caseStudy):
 				$image = get_field("hero_background_image", $caseStudy->ID); $url = $image["sizes"]["medium_large"];?>
 
-			<div class="col overview-block-container container">
+			<div class="col overview-block-container container slide-up">
 				<div class="overview-block col" style="background-image:url(<?php echo $image['url']; ?>);">
 					<div>
 						<h3><?php echo $caseStudy->post_title; ?></h3>

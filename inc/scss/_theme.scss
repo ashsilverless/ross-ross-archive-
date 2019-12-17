@@ -233,6 +233,9 @@ header{
 }
 /*------OVERVIEW & CASE STUDY BLOCKS --------*/
 .overview-block-container{
+	@for $i from 1 to 10 {
+	  &:nth-child(#{$i}) { transition-delay: $i * 0.4s; }
+	}
 	.overview-block{
 		position: relative;
 		transition:$slowEffect;
@@ -264,9 +267,6 @@ header{
 			transition: $slowEffect;
 			background-color: rgba(black, 0.6);
 		}
-		&:last-of-type{
-			margin-right:0;
-		}
 		h3{
 			padding: 3rem 0;
 			font-family: $body-font;
@@ -296,6 +296,9 @@ header{
 	width: 100%;
 	padding-top:5rem;
 	.img-wrapper {
+		@for $i from 1 to 20 {
+		  &:nth-child(#{$i}) { transition-delay: $i * 0.3s; }
+		}
 		height: 20em;
 		background-size: cover;
 		background-position: center;
@@ -458,7 +461,12 @@ header{
 		color: white;
 	}
 	a{
+		transition: $slowEffect;
 		color: white;
+		&:hover{
+			transition: $slowEffect;
+			color: $brand-primary;
+		};
 	}
 }
 #contact_form{
@@ -491,7 +499,6 @@ header{
 		}
 	}
 }
-
 
 /*===========FOOTER==========*/
 footer{

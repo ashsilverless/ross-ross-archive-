@@ -27,7 +27,7 @@ get_header();?>
 						$colourValue = $colour['value'];
 						$image = get_sub_field('background_image');
 						?>
-				<div class="col overview-block-container container">
+				<div class="col overview-block-container container slide-up">
 					
 						<div class="overview-block col" style="background-image:url(<?php echo $image['url']; ?>);">
 							<div>

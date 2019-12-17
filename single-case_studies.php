@@ -63,7 +63,7 @@ $colour = get_field('page_colour')
 			$images = get_field('gallery');
 			if( $images ): ?>
 			        <?php foreach( $images as $image ): ?>
-			            <div class="img-wrapper" style="background-image: url(<?php echo $image['sizes']['large']; ?>)">
+			            <div class="img-wrapper slow-fade" style="background-image: url(<?php echo $image['sizes']['large']; ?>)">
 			                <a href="<?php echo esc_url($image['url']); ?>">
 			                </a>
 			                <p><?php echo esc_html($image['caption']); ?></p>
