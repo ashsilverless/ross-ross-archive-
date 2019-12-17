@@ -18,27 +18,14 @@ $colour = get_field('page_colour')
 
 
 <?php if( have_rows('introduction') ):
-    		while( have_rows('introduction') ): the_row(); ?>
-	<div id="introduction" class="boxed-content <?php echo $colour;?>">
-		<div class="container cols-offset4-16 text-center read_more_container">
-			<div class="col">
-				<?php if( get_field('introduction_heading') ): ?>
-					<h2><?php the_sub_field('introduction_heading');?></h2>
-				<?php endif; ?>
-				<?php the_sub_field('introduction_text');?>
-				<?php if( get_field('introduction_text_read_more') ): ?>
-					<?php the_sub_field('introduction_text_read_more');?>
-					<a class="button read-more" href="#"><span><?php the_sub_field('introduction_read_more');?></span></a>
-				<?php endif; ?>
-			</div>
-		</div>
-	</div>
+    while( have_rows('introduction') ): the_row(); ?>
+	<?php get_template_part("template-parts/intro-content"); ?>
 <?php endwhile; endif;?>
 
 <!--TEAM-->
 <?php if( have_rows('team') ): ?>
 	<div id="team" class="boxed-content">
-		<div class="container cols-offset2-8-8 read_more_container">
+		<div class="container cols-12 grid-gap container-small cols-sm-24 no-sm-gutter read_more_container">
 			<?php while( have_rows('team') ): the_row();
 				$image = get_sub_field('image');?>
 				<div class="col">

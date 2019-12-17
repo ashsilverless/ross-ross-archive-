@@ -38,55 +38,64 @@ $colour = get_field('page_colour')
 <?php endwhile; endif;?>
 
 <!--MAIN CONTENT-->
+<div id="content" class="boxed-content">
 <?php if( have_rows('content') ):
-    		while( have_rows('content') ): the_row(); ?>
-	<div id="content" class="boxed-content <?php echo $colour;?>">
-		<div class="container cols-offset2-9-2-9">
-			<div class="col">
-				<?php the_sub_field('left_column');?>
-			</div>
-			<div class="col"></div>
-			<div class="col">
-				<?php the_sub_field('right_column');?>
-			</div>
+		while( have_rows('content') ): the_row(); ?>
+
+	<div class="container  container-small grid-gap cols-12">
+		<div class="col">
+			<?php the_sub_field('left_column');?>
+		</div>
+		<div class="col">
+			<?php the_sub_field('right_column');?>
 		</div>
 	</div>
-<?php endwhile; endif;?>
+	<?php endwhile; endif;?>
 
-<!--GALLERY-->
-<div class="container container-small cols-24">
-	
-	<div class="col gallery">
+
+
+	<!--GALLERY-->
+	<div class="container container-small cols-24">
 		
-		<?php 
-		$images = get_field('gallery');
-		if( $images ): ?>
-		        <?php foreach( $images as $image ): ?>
-		            <div class="img-wrapper" style="background-image: url(<?php echo $image['sizes']['large']; ?>)">
-		                <a href="<?php echo esc_url($image['url']); ?>">
-		                </a>
-		                <p><?php echo esc_html($image['caption']); ?></p>
-		            </div>
-		        <?php endforeach; ?>
-		<?php endif; ?>
+		<div class="col gallery">
+			
+			<?php 
+			$images = get_field('gallery');
+			if( $images ): ?>
+			        <?php foreach( $images as $image ): ?>
+			            <div class="img-wrapper" style="background-image: url(<?php echo $image['sizes']['large']; ?>)">
+			                <a href="<?php echo esc_url($image['url']); ?>">
+			                </a>
+			                <p><?php echo esc_html($image['caption']); ?></p>
+			            </div>
+			        <?php endforeach; ?>
+			<?php endif; ?>
+		</div>
 	</div>
+
+	<!--TESTIMONIAL-->
+	<?php if( have_rows('testimonial') ):
+			while( have_rows('testimonial') ): the_row(); ?>
+		<div class="boxed-content">
+		
+				<?php get_template_part("template-parts/testimonial"); ?>
+		</div>
+	<?php endwhile; endif;?>
 </div>
+
+
+
+
+
+
+<?php endwhile;?>
 
 <!-- CASE STUDIES -->
 
 <?php get_template_part("template-parts/case-studies-list"); ?>
 
 
-	<!--TESTIMONIAL-->
-<?php if( have_rows('testimonial') ):
-		while( have_rows('testimonial') ): the_row(); ?>
-	<div class="boxed-content">
-	
-			<?php get_template_part("template-parts/testimonial"); ?>
-	</div>
-<?php endwhile; endif;?>
 
-<?php endwhile;?>
 
 <!--CONTACT BOX-->
 <?php if( have_rows('contact_box') ):
@@ -95,5 +104,4 @@ $colour = get_field('page_colour')
 		<?php get_template_part("template-parts/contact-box"); ?>
 	</div>
 <?php endwhile; endif;?>
->>>>>>> e20db007e15d865c257ea02a5d74269a74f9b95e
 <?php get_footer(); ?>

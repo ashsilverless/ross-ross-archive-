@@ -17,7 +17,7 @@ get_header();?>
 					<h1><?php the_sub_field('title');?></h1>
 				</div>
 			</div>
-			<div class="container cols-10-4-10 text-left">
+			<div class="container cols-12 grid-gap cols-sm-24 no-sm-gutter text-left">
 				<?php if( have_rows('contact_info', 'options') ):
 		            		while( have_rows('contact_info', 'options') ): the_row(); ?>
 					<div class="col">
@@ -36,7 +36,6 @@ get_header();?>
 						</div>
 					</div>
 				<?php endwhile; endif;?>
-					<div class="col"></div>
 					<div class="col" id="contact_form">
 						<?php if( get_sub_field('contact_form_shortcode') ): ?>
 							<?php echo do_shortcode( get_sub_field('contact_form_shortcode') ); ?>
