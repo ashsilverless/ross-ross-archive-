@@ -242,4 +242,19 @@ jQuery(document).ready(function($) {
     $('.services-content-container').css('height', (tabHeight + 200))
     $('#' + selectedTab).addClass('selected');
   })
+
+  //Mobile Menu
+
+  $(".mobileMenu").click(function() {
+    $("nav").slideToggle(300);
+  });
+  /*$('').on('click', function(){
+    if($('header').hasClass('open')){
+      console.log('does not have class');
+      $('header').removeClass('open');
+    } else {
+      console.log('has class');
+      $('header').addClass('open');
+    }
+  })*/
 }); //Don't remove ---- end of jQuery wrapper

@@ -33,7 +33,10 @@
 	<div id="page" class="site-wrapper">
 
         <header>
-        	<div class="container cols-10-10-4">
+            <div class="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        	<div class="container cols-10-10-4 cols-lg-6-12-6 cols-md-6-18 cols-sm">
         		<div class="col" id="logo">
             		<a href="<?php echo get_home_url(); ?>"><span style="font-size:2rem;">logo</span></a>
             	</div>
@@ -49,7 +52,7 @@
             	</div>
             	<?php if( have_rows('contact_info', 'options') ):
             		while( have_rows('contact_info', 'options') ): the_row(); ?>
-		            	<div class="col">
+		            	<div class="col hide-md">
 		            		<div class="contact">
 			                     <a href="tel:<?php the_sub_field("phone"); ?>"><?php the_sub_field("phone"); ?></a>
 			                </div>

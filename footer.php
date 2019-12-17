@@ -13,7 +13,7 @@
 
 	<div class="socket">
 
-		<div class="container cols-7-10-7">
+		<div class="container cols-7-10-7 cols-sm text-center-sm">
 
 			<div class="col colophon">Copyright &copy; <?php echo date ('Y');?> Ross & Ross Consulting Limited</div>
 

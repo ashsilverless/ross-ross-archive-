@@ -4,6 +4,9 @@
 body{
 	font-size:$fontSize;
 }
+.container-small{
+	max-width: $sm-container-width;
+}
 .boxed-content{
 	margin: 1rem;
 	padding: 5rem 0;
@@ -132,6 +135,9 @@ header{
 			align-items: center;
 		}
 	}
+	.mobileMenu{
+		display: none;
+	}
 }
 
 /*===========BODY==========*/
@@ -196,7 +202,7 @@ header{
 			border-bottom: 3px solid white;
 			width: 30px;
 			height: 30px;
-			transform: translateY(-50%) rotate(-45deg);
+			transform: translateX(-50%) rotate(-45deg);
 			transition: $fastEffect;
 			&:hover{
 				top:10px;
@@ -215,8 +221,6 @@ header{
 	color: $brand-secondary;
 }
 .overview-block-container{
-	grid-column-gap: 1.5em;
- 	grid-row-gap: 3rem;
 	.overview-block{
 		position: relative;
 		transition:$slowEffect;
@@ -441,7 +445,30 @@ header{
 	display: grid;
 	width: 100%;
 	.img-wrapper {
+		height: 20em;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 
+		&:nth-of-type(11n - 10), &:nth-of-type(11n - 4) {
+			grid-column: span 4;
+		}
+
+		&:nth-of-type(11n - 9), &:nth-of-type(11n - 5){
+			grid-column: span 8;
+		}
+
+		&:nth-of-type(11n - 8), &:nth-of-type(11n - 6){
+			grid-column: span 3;
+		}
+
+		&:nth-of-type(11n - 7){
+			grid-column: span 6;
+		}
+
+		&:nth-of-type(11n - 3), &:nth-of-type(11n - 2), &:nth-of-type(11n - 1), &:nth-of-type(11n)  {
+			grid-column: span 12;
+		}
 	}
 }
 
