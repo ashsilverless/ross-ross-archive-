@@ -1,0 +1,8 @@
+<div class="container cols-offset4-16 text-center">
+	<div class="col">
+		<blockquote>
+			<?php the_sub_field('testimonial_content');?>
+			<footer><?php the_sub_field('customer_name');?></footer>
+		</blockquote>
+	</div>
+</div>

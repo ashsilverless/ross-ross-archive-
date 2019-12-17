@@ -5,39 +5,29 @@ body{
 	font-size:$fontSize;
 }
 .boxed-content{
-	padding: 5rem 0;
 	margin: 1rem;
+	padding: 5rem 0;
 }
 .text-center{
 	text-align: center;
+}
+.text-left{
+	text-align: left;
 }
 h1, h2, h3, h4, h5, h6{
 	font-family: $brand-font;
 }
 .button{
+	position: relative;
 	display:inline-block;
+	overflow: hidden;
 	padding: 0.8rem 3rem;
 	border: 1px solid white;
 	background-color: transparent;
-	color: white;
-	font-family: $body-font;
 	font-size:1rem;
+	font-family: $body-font;
 	text-transform: uppercase;
-	overflow: hidden;
-	position: relative;
-	&:after{
-		display: block;
-		content: '';
-		background-color: white;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		transform: translateX(-100%);
-		transition: $fastEffect;
-		z-index: 1;
-	};
+	color: white;
 	&:hover{
 		background-color:transparent;
 		color: $brand-primary;
@@ -46,9 +36,22 @@ h1, h2, h3, h4, h5, h6{
 			transition: $fastEffect;
 		}
 	};
+	&:after{
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: block;
+		transform: translateX(-100%);
+		transition: $fastEffect;
+		background-color: white;
+	};
 	span{
-		z-index: 2;
 		position: relative;
+		z-index: 2;
 	}
 	&.blue{
 		background-color: $brand-secondary;
@@ -62,38 +65,59 @@ h1, h2, h3, h4, h5, h6{
 			color:$brand-primary;
 		}
 	}
+	&.button-alt{
+		border: 1px solid $brand-secondary;
+		&:hover{
+			color: white;
+		}
+		&:after{
+			background-color:$brand-secondary;
+		}
+	}
 }
 blockquote{
 	position: relative;
-	font-family: $brand-font;
-	letter-spacing: 2px;
-	font-size: $fontSize*1.1;
 	margin-top: 8rem;
 	margin-bottom: 8rem;
+	font-size: $fontSize*1.1;
+	line-height: $fontSize*1.5;
+	font-family: $brand-font;
+	letter-spacing: 2px;
 	&:before, &:after{
-		display: block;
-		font-family: $brand-font;
-		font-size: 5rem;
 		position: absolute;
+		display: block;
+		font-size: 5rem;
+		font-family: $brand-font;
 		color: $brand-primary;
-	};
-	&:after{
-		content: '\201D';
-		right: -5rem;
-		bottom:-1rem;
 	};
 	&:before{
 		content: '\201C';
+		top:0rem;
 		left: -5rem;
-		top:-3rem;
+	};
+	&:after{
+		content: '\201D';
+		bottom:2rem;
+		right: -5rem;
 	};
 	footer{
 		padding-top: 3rem;
-		font-family: $body-font;
-		text-transform: uppercase;
 		font-size: $fontSize*0.6;
+		font-family: $body-font;
 		font-weight: 700;
+		text-transform: uppercase;
 		letter-spacing: normal;
+	}
+}
+
+.green{
+	&#introduction, .services-container, .services-container .tab.selected:before, .contact-cta{
+		background-color: $brand-primary;
+	}
+}
+.blue{
+	&#introduction, .services-container, .services-container .tab.selected:before, .contact-cta{
+		background-color: $brand-secondary;
 	}
 }
 
@@ -112,62 +136,78 @@ header{
 
 /*===========BODY==========*/
 .hero{
+	position: relative;
 	color: white;
+	&:before{
+		content: '';
+		position:absolute;
+		z-index: 1;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(black, 0.6);
+	}
 	.container{
+		z-index: 2;
+		align-content: center;
+		display: relative;
 		width: 80%;
 		text-align: center;
-		align-content: center;
 		h1{
 			font-size:3.5rem;
-			letter-spacing: 6px;
-			font-family: $body-font;
 			font-weight:300;
-			text-transform: uppercase;
 		}
 		h2{
+			margin:0;
 			font-size:1.4rem;
-			letter-spacing: 4px;
 			font-family: $body-font;
 			text-transform: uppercase;
-			margin:0;
+			letter-spacing: 4px;
 		}
 		h3{
 			font-size:3rem;
-			letter-spacing: 2px;
 			font-family: $body-font;
 			font-weight:300;
 			text-transform: uppercase;
+			letter-spacing: 2px;
 		}
 		.company-copy{
 			margin-top: 10vh;
 			margin-bottom: 10vh;
+		}
+		.home_hero{
+			h1{
+				font-family: $body-font;
+				text-transform: uppercase;
+				letter-spacing: 6px;
+			}
 		}
 	}
 	#scroll-icon{
 		position:relative;
 		span{
 			content:'';
-			display: block;
-			width: 30px;
-			height: 30px;
-			border-left: 3px solid white;
-			border-bottom: 3px solid white;
 			position: absolute;
 			top: 0;
 			left: 50%;
+			display: block;
+			border-left: 3px solid white;
+			border-bottom: 3px solid white;
+			width: 30px;
+			height: 30px;
 			transform: translateY(-50%) rotate(-45deg);
 			transition: $fastEffect;
 			&:hover{
-				cursor:pointer;
 				top:10px;
 				transition: $fastEffect;
+				cursor:pointer;
 			};
 		}
 	}
 }
 
 #introduction{
-	background-color: $brand-primary;
 	color: white;
 }
 #residential-hospitality{
@@ -175,23 +215,129 @@ header{
 	color: $brand-secondary;
 }
 .overview-block-container{
-	display: flex;
+	grid-column-gap: 1.5em;
+ 	grid-row-gap: 3rem;
 	.overview-block{
+		position: relative;
+		transition:$slowEffect;
+		margin-right:2rem;
+		width: inherit;
 		padding: 3rem;
 		background-size:cover;
 		background-repeat: no-repeat;
 		background-position: center;
 		color: white;
-		width: inherit;
-		margin-right:2rem;
+		> div {
+			position:relative;
+			z-index: 2;
+		}
+		&:hover{
+			&:before{
+				transition: $slowEffect;
+				background-color: rgba(black, 0.4);
+			}
+		}
+		&:before{
+			content: '';
+			position:absolute;
+			z-index: 1;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			transition: $slowEffect;
+			background-color: rgba(black, 0.6);
+		}
 		&:last-of-type{
 			margin-right:0;
 		}
 		h3{
+			padding: 3rem 0;
 			font-family: $body-font;
 			font-weight: 300;
 			text-transform: uppercase;
-			padding: 3rem 0;
+		}
+	}
+}
+.services{
+	.services-container{
+		.services-tab{
+			justify-content: space-between;
+			display: flex;
+			text-transform:uppercase;
+			color: white;
+			.tab{
+				position:relative;
+				z-index: 2;
+				padding:3rem 0;
+				width: inherit;
+				transition:$fastEffect;
+				img{
+					margin-bottom:2rem;
+					height: 3rem;
+				}
+				&:hover{
+					transition:$fastEffect;
+					background-color: white;
+					cursor: pointer;
+					color: $brand-primary;
+				}
+				&.selected{
+					&:hover:before{
+						transition:$fastEffect;
+						background-color: white;
+						cursor: pointer;
+					}
+					&:before{
+						content: '';
+						position: absolute;
+						z-index: 1;
+						bottom:0;
+						left: 50%;
+						transform: translate(-50%, 52%) rotate(45deg);
+						transition:$fastEffect;
+						border-right:2px solid white;
+						border-bottom:2px solid white;
+						width: 3rem;
+						height: 3rem;
+					}
+				}
+			}
+		}
+	}
+	.services-content-container{
+		padding:5rem 0;
+		margin-top: 0.5rem;
+		background-color:$brand-mid-grey;
+		color: white;
+		.col{
+			position:relative;
+		}
+		.services-tab-content{
+			justify-content: flex-start;
+			align-items:top;
+			position:absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			visibility: hidden;
+			opacity: 0;
+			transition:$fastEffect;
+			.icon{
+				width: 20%;
+			}
+			.content{
+				width: 66%;
+			}
+			&.selected{
+				visibility: visible;
+				opacity: 1;
+				transition:$fastEffect;
+			}
+			h3{
+				margin-top:0;
+				text-transform: uppercase;
+			}
 		}
 	}
 }
@@ -203,16 +349,120 @@ header{
 		font-size:3rem;
 	}
 }
+#team{
+	img{
+		max-height: 18rem;
+	}
+	.image_placeholder{
+		width: 100%;
+		height: 18rem;
+		background-color:$brand-light-grey;
+	}
+	.name{
+		margin-bottom: 0.5rem;
+		color: $brand-secondary;
+	}
+	.title{
+		margin-bottom: 2rem;
+		font-size: $fontSize*0.8;
+		text-transform: uppercase;
+		color: $brand-secondary;
+	}
+	a{
+		color: $brand-secondary;
+		&.button:hover{
+			color: white;
+		}
+	}
+}
+#contact{
+	height: 100vh;
+	background-size:cover;
+	background-position:center;
+	background-repeat: no-repeat;
+	color: white;
+	> .container{
+		align-content: center;
+		height: 100%;
+	}
+	h1{
+		text-transform: uppercase;
+		color: white;
+	}
+	a{
+		color: white;
+	}
+}
+#contact_form{
+	input, textarea{
+		padding:1rem;
+		transition: $fastEffect;
+		margin-bottom:1rem;
+		width: 100%;
+		&:focus{
+			border:2px solid $brand-secondary;
+			transition: $fastEffect;
+		}
+		&[type=submit]{
+			position:relative;
+			width: auto;
+			padding:0 3rem;
+			transition: $fastEffect;
+			background-color:$brand-secondary;
+			font-size: $fontSize;
+			font-weight:700;
+			text-transform:uppercase;
+			line-height: 3rem;
+			color: white;
+			&:hover{
+				transition: $fastEffect;
+				background-color:white;
+				cursor: pointer;
+				color: $brand-secondary;
+			};
+		}
+	}
+}
+#case-studies{
+	h2{
+		margin-bottom: 5rem;
+		text-transform: uppercase;
+		color: $brand-primary;
+	}
+}
+.case_study_title{
+	font-size: $fontSize*0.8;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.gallery{
+	grid-gap: 1.5em;
+	grid-template-columns: repeat(12, 1fr);
+	display: grid;
+	width: 100%;
+	.img-wrapper {
+
+	}
+}
+
 
 /*===========FOOTER==========*/
 footer{
 	font-size:$fontSize*0.6;
 	.mandatory{
-		display: flex;
 		flex-direction: column;
 		align-item: flex-start;
+		display: flex;
 	}
 	.socket > div{
 		align-items: flex-end;
+	}
+	#regulated{
+		margin-bottom: 2rem; 
+	}
+	&.home_footer{
+		.pre-socket, .socket{
+			background-color:$brand-primary;
+		}
 	}
 }

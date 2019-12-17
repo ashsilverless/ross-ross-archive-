@@ -9,10 +9,14 @@ endif;?>
 
     <div class="container">
 		<div class="col">
-		    <div class="hero__content">
+		    <div class="hero__content <?php if (is_page_template('page-templates/home.php')) {?>home_hero<?php }?>">
                 <div class="inner-section">
                 	<div class="company-title">
-	                	<img src="https://via.placeholder.com/300x150">
+                		<?php if (is_page_template('page-templates/home.php')) {?>
+                			<img src="https://via.placeholder.com/300x150">
+                		<?php } elseif ('case_studies' == get_post_type()) {?>
+                			<span class="case_study_title">Case Study</span>
+	                	<?php } ?>
 	                    <h1 class="heading heading__md heading__light mt0 mb0">
 	                    	<?php the_field('hero_heading');?>
 	                    </h1>
@@ -22,7 +26,7 @@ endif;?>
 	                </div>
 	                <div class="company-copy">
 	                    <h3>
-	                    	<?php the_field('hero_subheading');?>
+	                    	<?php the_field('hero_copy');?>
 	                    </h3>
 	                </div>
 	                <div id="scroll-icon">
