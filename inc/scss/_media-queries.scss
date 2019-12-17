@@ -136,15 +136,15 @@ blockquote{
 header{
 	transition: $slowEffect;
 	.mobileMenu{
+		align-items: center;
 		position: absolute;
 		display: flex;
 		top: 0rem;
 		right: 1rem;
 		height: 5rem;
-		font-size:$fontSize*2;
-		align-items: center;
-		cursor: pointer;
 		padding: 1rem;
+		font-size:$fontSize*2;
+		cursor: pointer;
 	}
 	background:white;
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
@@ -165,20 +165,20 @@ header{
 				li{
 					display: block;
 					a{
-						color: $brand-dark-grey;
+						border-bottom: 1px solid $brand-mid-grey;
 						width: 100%;
 						padding: 2rem;
-						border-bottom: 1px solid $brand-mid-grey;
 						font-size:$fontSize*1.2;
+						color: $brand-dark-grey;
 					}
 				}
 			}
 		}
 	}
 	.contact{
-		text-align: center;
-		font-size:$fontSize*1.2;
 		padding: 2rem;
+		font-size:$fontSize*1.2;
+		text-align: center;
 	}
 }
 
@@ -294,9 +294,9 @@ footer
 	
 .mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
 	width: 240px;
+	max-width: 360px;
 	font-size: 15px;
 	line-height: 20px;
-	max-width: 360px;
 }
 
 .mapboxgl-ctrl-geocoder--icon-search {
@@ -307,10 +307,10 @@ footer
 }
 
 .mapboxgl-ctrl-geocoder--icon-close {
-    width: 16px;
-    height: 16px;
     margin-top: 3px;
     margin-right: 0;
+    width: 16px;
+    height: 16px;
 }
 
 .mapboxgl-ctrl-geocoder--input {

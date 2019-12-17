@@ -131,8 +131,8 @@ header{
 	.container{
 		min-height:100%;
 		>.col{
-			display: grid;
 			align-items: center;
+			display: grid;
 		}
 	}
 	.mobileMenu{
@@ -220,6 +220,18 @@ header{
 	background-color: $brand-light-grey;
 	color: $brand-secondary;
 }
+#content{
+	background-color: $brand-light-grey;
+}
+.contact-cta{
+	padding: 2rem;
+	background-color: $brand-primary;
+	color: white;
+	i{
+		font-size:3rem;
+	}
+}
+/*------OVERVIEW & CASE STUDY BLOCKS --------*/
 .overview-block-container{
 	.overview-block{
 		position: relative;
@@ -263,6 +275,59 @@ header{
 		}
 	}
 }
+#case-studies{
+	h2{
+		margin-bottom: 5rem;
+		text-transform: uppercase;
+		color: $brand-primary;
+	}
+}
+.case_study_title{
+	font-size: $fontSize*0.8;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+/*-----------GALLERY ------------*/
+.gallery{
+	grid-gap: 1.5em;
+	grid-template-columns: repeat(12, 1fr);
+	display: grid;
+	width: 100%;
+	padding-top:5rem;
+	.img-wrapper {
+		height: 20em;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		&:nth-of-type(11n - 10), &:nth-of-type(11n - 4) {
+			grid-column: span 4;
+		}
+		&:nth-of-type(11n - 9), &:nth-of-type(11n - 5){
+			grid-column: span 8;
+		}
+		&:nth-of-type(11n - 8), &:nth-of-type(11n - 6){
+			grid-column: span 3;
+		}
+		&:nth-of-type(11n - 7){
+			grid-column: span 6;
+		}
+		&:nth-of-type(11n - 3), &:nth-of-type(11n - 2), &:nth-of-type(11n - 1), &:nth-of-type(11n)  {
+			grid-column: span 12;
+		}
+		a{
+			background-color:black;
+			opacity: 0;
+			transition: $fastEffect;
+			&:hover{
+				opacity: 0.4;
+				transition: $fastEffect;
+			};
+		}
+	}
+}
+
+/*---------------SERVICES---------------*/
 .services{
 	.services-container{
 		.services-tab{
@@ -273,10 +338,10 @@ header{
 			.tab{
 				position:relative;
 				z-index: 2;
-				padding:3rem 0;
-				width: inherit;
 				border-left: 5px solid transparent;
 				border-right: 5px solid transparent;
+				width: inherit;
+				padding:3rem 0;
 				transition:$fastEffect;
 				img{
 					margin-bottom:2rem;
@@ -311,8 +376,8 @@ header{
 		}
 	}
 	.services-content-container{
-		padding:5rem 0;
 		margin-top: 0.5rem;
+		padding:5rem 0;
 		background-color:$brand-mid-grey;
 		color: white;
 		.col{
@@ -346,14 +411,8 @@ header{
 		}
 	}
 }
-.contact-cta{
-	padding: 2rem;
-	background-color: $brand-primary;
-	color: white;
-	i{
-		font-size:3rem;
-	}
-}
+
+/*-------------TEAM BLOCK -------------*/
 #team{
 	background-color: $brand-light-grey;
 	img{
@@ -381,6 +440,8 @@ header{
 		}
 	}
 }
+
+/*-------------CONTACT FORM -------------*/
 #contact{
 	min-height: 100vh;
 	background-size:cover;
@@ -402,10 +463,10 @@ header{
 }
 #contact_form{
 	input, textarea{
-		padding:1rem;
 		transition: $fastEffect;
 		margin-bottom:1rem;
 		width: 100%;
+		padding:1rem;
 		&:focus{
 			border:2px solid $brand-secondary;
 			transition: $fastEffect;
@@ -429,63 +490,6 @@ header{
 			};
 		}
 	}
-}
-#case-studies{
-	h2{
-		margin-bottom: 5rem;
-		text-transform: uppercase;
-		color: $brand-primary;
-	}
-}
-.case_study_title{
-	font-size: $fontSize*0.8;
-	font-weight: 700;
-	text-transform: uppercase;
-}
-.gallery{
-	grid-gap: 1.5em;
-	grid-template-columns: repeat(12, 1fr);
-	display: grid;
-	width: 100%;
-	padding-top:5rem;
-	.img-wrapper {
-		height: 20em;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-
-		&:nth-of-type(11n - 10), &:nth-of-type(11n - 4) {
-			grid-column: span 4;
-		}
-
-		&:nth-of-type(11n - 9), &:nth-of-type(11n - 5){
-			grid-column: span 8;
-		}
-
-		&:nth-of-type(11n - 8), &:nth-of-type(11n - 6){
-			grid-column: span 3;
-		}
-
-		&:nth-of-type(11n - 7){
-			grid-column: span 6;
-		}
-
-		&:nth-of-type(11n - 3), &:nth-of-type(11n - 2), &:nth-of-type(11n - 1), &:nth-of-type(11n)  {
-			grid-column: span 12;
-		}
-		a{
-			background-color:black;
-			opacity: 0;
-			transition: $fastEffect;
-			&:hover{
-				opacity: 0.4;
-				transition: $fastEffect;
-			};
-		}
-	}
-}
-#content{
-	background-color: $brand-light-grey;
 }
 
 
