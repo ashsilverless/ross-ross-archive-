@@ -13,7 +13,9 @@ endif;?>
                 <div class="inner-section">
                 	<div class="company-title">
                 		<?php if (is_page_template('page-templates/home.php')) {?>
-                			<img src="https://via.placeholder.com/300x150">
+                			<?php 
+                            $logo = get_field("logo", "options");?>
+                            <img src="<?php echo $logo["url"];?>"/>
                 		<?php } elseif ('case_studies' == get_post_type()) {?>
                 			<span class="case_study_title">Case Study</span>
 	                	<?php } ?>

@@ -185,7 +185,16 @@ header{
 
 
 /*---CONTENT---*/
-
+.hero{
+	.container{
+		.company-title{
+			img{
+				max-width: 8rem;
+				margin-bottom: 2rem;
+			}
+		}
+	}
+}
 .services{
 	.services-container{
 		.services-tab{
@@ -280,6 +289,31 @@ footer
 }
 
 /*---HEADER---*/
+.hero{
+	padding-top: 5.5rem;
+	.container{
+		h1{
+			font-size:1.8rem;
+			font-weight:300;
+		}
+		h2{
+			font-size:1.4rem;
+		}
+		h3{
+			font-size:1.4rem;
+		}
+		.company-title{
+			img{
+				max-width: 8rem;
+				margin-bottom: 2rem;
+			}
+		}
+		.company-copy{
+			margin-top:3vh;
+			margin-bottom:3vh;
+		}
+	}
+}
 
 /*---CONTENT---*/
 

@@ -38,7 +38,11 @@
             </div>
         	<div class="container cols-10-10-4 cols-lg-6-12-6 cols-md-6-18 cols-sm">
         		<div class="col" id="logo">
-            		<a href="<?php echo get_home_url(); ?>"><span style="font-size:2rem;">logo</span></a>
+            		<a href="<?php echo get_home_url(); ?>">
+                       <?php 
+                            $logo = get_field("logo", "options");?>
+                            <img src="<?php echo $logo["url"];?>"/>
+                    </a>
             	</div>
             	<div class="col">
             		<nav id="nav">

@@ -138,6 +138,11 @@ header{
 	.mobileMenu{
 		display: none;
 	}
+	#logo{
+		img{
+			max-height:3rem;
+		}
+	}
 }
 
 /*===========BODY==========*/
@@ -177,6 +182,12 @@ header{
 			font-weight:300;
 			text-transform: uppercase;
 			letter-spacing: 2px;
+		}
+		.company-title{
+			img{
+				max-width: 12rem;
+				margin-bottom: 2rem;
+			}
 		}
 		.company-copy{
 			margin-top: 10vh;
@@ -351,9 +362,6 @@ header{
 					height: 3rem;
 				}
 				&:hover{
-					transition:$fastEffect;
-					border-left: 5px solid white;
-					border-right: 5px solid white;
 					cursor: pointer;
 				}
 				&.selected{
