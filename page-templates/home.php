@@ -32,10 +32,9 @@ get_header();?>
 						<div class="overview-block col" style="background-image:url(<?php echo $image['url']; ?>);">
 							<div>
 								<h3><?php the_sub_field('title');?></h3>
-								<a class="button <?php echo esc_attr($colourValue);?>" href=""><span><?php the_sub_field('cta_title');?></span></a>
+								<a class="button <?php echo esc_attr($colourValue);?>" href="<?php the_sub_field('cta_target');?>"><span><?php the_sub_field('cta_title');?></span></a>
 							</div>
 						</div>
-					
 				</div>
 			<?php endwhile; endif;?>
 		</div>

@@ -1,4 +1,4 @@
-<div class="container cols-offset4-16 cols-sm-offset2-20 text-center">
+<div class="container cols-offset4-16 cols-sm-24 text-center">
 	<div class="col">
 		<blockquote>
 			<?php the_sub_field('testimonial_content');?>

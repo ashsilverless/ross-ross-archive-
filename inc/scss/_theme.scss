@@ -10,6 +10,9 @@ body{
 .boxed-content{
 	margin: 1rem;
 	padding: 5rem 0;
+	>div{
+		padding: 0 1rem;
+	}
 }
 .text-center{
 	text-align: center;
@@ -245,7 +248,7 @@ header{
 /*------OVERVIEW & CASE STUDY BLOCKS --------*/
 .overview-block-container{
 	@for $i from 1 to 10 {
-	  &:nth-child(#{$i}) { transition-delay: $i * 0.4s; }
+	  &:nth-child(#{$i}) { transition-delay: $i * 0.2s; }
 	}
 	.overview-block{
 		position: relative;
@@ -308,7 +311,7 @@ header{
 	padding-top:5rem;
 	.img-wrapper {
 		@for $i from 1 to 20 {
-		  &:nth-child(#{$i}) { transition-delay: $i * 0.3s; }
+		  &:nth-child(#{$i}) { transition-delay: $i * 0.2s; }
 		}
 		height: 20em;
 		background-size: cover;

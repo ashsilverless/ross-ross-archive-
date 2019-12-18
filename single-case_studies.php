@@ -42,7 +42,7 @@ $colour = get_field('page_colour')
 <?php if( have_rows('content') ):
 		while( have_rows('content') ): the_row(); ?>
 
-	<div class="container  container-small grid-gap cols-12">
+	<div class="container  container-small grid-gap cols-12 no-sm-gutter cols-sm-24">
 		<div class="col">
 			<?php the_sub_field('left_column');?>
 		</div>

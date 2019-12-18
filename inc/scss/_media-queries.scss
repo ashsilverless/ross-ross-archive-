@@ -84,7 +84,7 @@ body {
     font-size: $fontSize*0.8;
 }
 .boxed-content{
-	padding: 2rem;
+	padding: 2rem 0;
 }
 
 .hide-sm{
@@ -107,6 +107,9 @@ body {
     }
 	&.no-sm-gutter{
 		grid-gap: 0;
+		>.col{
+			padding:1rem;
+		}
 	}
 }
 
@@ -168,7 +171,7 @@ header{
 						border-bottom: 1px solid $brand-mid-grey;
 						width: 100%;
 						padding: 2rem;
-						font-size:$fontSize*1.2;
+						font-size:$fontSize*1;
 						color: $brand-dark-grey;
 					}
 				}
