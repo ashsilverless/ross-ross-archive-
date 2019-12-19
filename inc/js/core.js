@@ -251,13 +251,9 @@ jQuery(document).ready(function($) {
   $(".mobileMenu").click(function() {
     $("nav").slideToggle(300);
   });
-  /*$('').on('click', function(){
-    if($('header').hasClass('open')){
-      console.log('does not have class');
-      $('header').removeClass('open');
-    } else {
-      console.log('has class');
-      $('header').addClass('open');
-    }
-  })*/
+
+  var navHeight = $("header").height();
+  $(".company-title").css({
+    "padding-top": navHeight + "px"
+  });
 }); //Don't remove ---- end of jQuery wrapper
