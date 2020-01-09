@@ -50,19 +50,22 @@ jQuery(document).ready(function($) {
       });
   });
 
-  $(".single-image").magnificPopup({
-    type: "image",
-    closeOnContentClick: true,
-    closeBtnInside: false,
-    fixedContentPos: true,
-    mainClass: "mfp-no-margins mfp-with-zoom",
-    image: {
-      verticalFit: true
-    },
-    zoom: {
-      enabled: true,
-      duration: 300
-    }
+  /* Magnific Popup */
+
+  $(".img-wrapper").each(function(gallery) {
+    $(this).magnificPopup({
+      delegate: 'a',
+      type: 'image',
+      closeOnContentClick: true,
+      closeBtnInside: false,
+      image: {
+        verticalFit: true,
+      },
+      gallery: {
+        enabled: true,
+        navigateByImgClick: true,
+      },
+    });
   });
 
   $(".post-image a").magnificPopup({
@@ -89,12 +92,10 @@ jQuery(document).ready(function($) {
     $(".current-menu-item").toggleClass("loaded");
     $(".menu-trigger").toggleClass("opened");
   });
-
-  $(".read-more").click(function() {
-    $(this)
-      .prev()
-      .slideToggle();
-    $(this).text($(this).text() == "Read more" ? "Read less" : "Read more");
+  $(".read-more").prev().hide();
+  $(".read-more").click(function(e) {
+    e.preventDefault();
+    $(this).prev().slideToggle();
   });
 
   $(".tab-trigger").click(function() {
@@ -229,5 +230,30 @@ jQuery(document).ready(function($) {
   });
   $("a.control_next").click(function() {
     moveRight();
+  });
+
+  //Tabs
+  var initialHeight = $('.services-content-container').find('.services-tab-content').height();
+  $('.services-content-container').css('height', (initialHeight + 200))
+
+  $('.services-tab .tab').on('click', function(){
+    var selectedTab = $(this).attr('data-tab');
+    var tabHeight = $('#' + selectedTab).height();
+    $('.services-tab .tab').removeClass('selected');
+    $(this).addClass('selected');
+    $('.services-tab-content').removeClass('selected');
+    $('.services-content-container').css('height', (tabHeight + 200))
+    $('#' + selectedTab).addClass('selected');
+  })
+
+  //Mobile Menu
+
+  $(".mobileMenu").click(function() {
+    $("nav").slideToggle(300);
+  });
+
+  var navHeight = $("header").height();
+  $(".company-title").css({
+    "padding-top": navHeight + "px"
   });
 }); //Don't remove ---- end of jQuery wrapper

@@ -7,6 +7,19 @@
 /*---GLOBALS---*/ 
 
 /*---HEADER---*/ 
+.container{
+	&.cols-lg-6-12-6{
+        >.col:nth-of-type(3n - 2) {
+            grid-column: span 6;
+        }
+        >.col:nth-of-type(3n -1) {
+            grid-column: span 12;
+        }
+        >.col:nth-of-type(3n) {
+            grid-column: span 6;
+        }
+	}
+}
 
 /*---CONTENT---*/
 
@@ -22,13 +35,40 @@
 /*---GLOBALS---*/ 
 
 body {
-    font-size: 0.75em;
+    font-size: $fontSize*0.9;
+}
+.hide-md{
+	display: none !important;
+}
+
+.container{
+	&.cols-md-6-18{
+        >.col:nth-of-type(3n - 2) {
+            grid-column: span 6;
+        }
+        >.col:nth-of-type(3n -1) {
+            grid-column: span 18;
+        }
+	}
 }
  
 /*---HEADER---*/
 
 /*---CONTENT---*/
+.hero{
+	.container{
+		h1{
+			font-size:$fontSize*1.6;
+		}
+		h3{
+			font-size:$fontSize*1.8;
+		}
+	}
+}
 
+.overview-block-container{
+	margin-bottom: 2rem;
+}
 /*---FOOTER---*/
 
 }/*---end medium mq---*/
@@ -41,15 +81,204 @@ body {
 /*---GLOBALS---*/
 
 body {
-  font-size: 0.65em;
+    font-size: $fontSize*0.8;
+}
+.boxed-content{
+	padding: 2rem 0;
+}
+
+.hide-sm{
+	display: none !important;
+}
+
+.visible-sm{
+	display: block !important;
+}
+
+.container{
+	&.cols-sm >.col{
+        grid-column: span 24 !important;
+    }
+    &.cols-sm-offset2-20{
+    	>.col {
+            grid-column-start:3;     
+            grid-column-end:23;     
+        }   
+    }
+	&.no-sm-gutter{
+		grid-gap: 0;
+		>.col{
+			padding:1rem;
+		}
+	}
+}
+
+.text-center-sm{
+	text-align: center;
+}
+
+blockquote{
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+	font-size: $fontSize*0.8;
+	line-height: $fontSize*1.2;
+	&:before, &:after{
+		font-size: 3rem;
+	};
+	&:before{
+		top:0rem;
+		left: -2rem;
+	};
+	&:after{
+		bottom:2rem;
+		right: -2rem;
+	};
 }
 
 /*---HEADER---*/
+header{
+	transition: $slowEffect;
+	.mobileMenu{
+		align-items: center;
+		position: absolute;
+		display: flex;
+		top: 0rem;
+		right: 1rem;
+		height: 5rem;
+		padding: 1rem;
+		font-size:$fontSize*2;
+		cursor: pointer;
+	}
+	background:white;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+    a{
+    	color: $brand-dark-grey;
+    }
+    #logo{
+    	height: 5rem;
+    }
+	nav{
+		display: none;
+		border-right: none;
+		background-color: white;
+		.mainMenu{
+			ul{
+				display: block;
+				width:100%;
+				li{
+					display: block;
+					a{
+						border-bottom: 1px solid $brand-mid-grey;
+						width: 100%;
+						padding: 2rem;
+						font-size:$fontSize*1;
+						color: $brand-dark-grey;
+					}
+				}
+			}
+		}
+	}
+	.contact{
+		padding: 2rem;
+		font-size:$fontSize*1.2;
+		text-align: center;
+	}
+}
+
+
 
 /*---CONTENT---*/
+.hero{
+	.container{
+		.company-title{
+			img{
+				max-width: 8rem;
+				margin-bottom: 2rem;
+			}
+		}
+	}
+}
+.services{
+	.services-container{
+		.services-tab{
+			margin-bottom:0;
+			.tab{
+				padding:1rem;
+				img{
+					margin-bottom:0;
+					height: 2rem;
+				}
+				span, br{
+					display: none;
+				}
+				&.selected{
+					&:before{
+						bottom:0;
+						left: 50%;
+						transform: translate(-50%, 52%) rotate(45deg);
+						width: 2rem;
+						height: 2rem;
+					}
+				}
+			}
+		}
+	}
+	.services-content-container{
+		padding:3rem 0;
+		.services-tab-content{
+			justify-content: flex-start;
+			align-items:top;
+			position:absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			visibility: hidden;
+			opacity: 0;
+			transition:$fastEffect;
+			.content{
+				width: 100%;
+			}
+			&.selected{
+				visibility: visible;
+				opacity: 1;
+				transition:$fastEffect;
+			}
+			h3{
+				margin-top:0;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+#case-studies{
+	h2{
+		margin-bottom: 2rem;
+	}
+}
+.gallery{
+	.img-wrapper{
+		grid-column: span 6 !important;
+	}
+}
+
+#contact{
+	padding-top: 5rem;
+	> .container{
+		padding: 2rem;
+	}
+}
   
 /*---FOOTER---*/
-
+footer 
+	.socket .colophon{
+		justify-content: center;
+	}
+	.col{
+		margin-bottom: 1rem;
+	}
+	#regulated{
+		margin-bottom: 1rem !important;
+	}
 }/*---end small mq---*/
 
 
@@ -58,8 +287,36 @@ body {
 @media only screen and (max-width: 576px) {
   
 /*---GLOBALS---*/
+.button{
+	padding: 0.8rem 1.5rem;
+}
 
 /*---HEADER---*/
+.hero{
+	padding-top: 5.5rem;
+	.container{
+		h1{
+			font-size:1.8rem;
+			font-weight:300;
+		}
+		h2{
+			font-size:1.4rem;
+		}
+		h3{
+			font-size:1.4rem;
+		}
+		.company-title{
+			img{
+				max-width: 8rem;
+				margin-bottom: 2rem;
+			}
+		}
+		.company-copy{
+			margin-top:3vh;
+			margin-bottom:3vh;
+		}
+	}
+}
 
 /*---CONTENT---*/
 
@@ -74,9 +331,9 @@ body {
 	
 .mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
 	width: 240px;
+	max-width: 360px;
 	font-size: 15px;
 	line-height: 20px;
-	max-width: 360px;
 }
 
 .mapboxgl-ctrl-geocoder--icon-search {
@@ -87,10 +344,10 @@ body {
 }
 
 .mapboxgl-ctrl-geocoder--icon-close {
-    width: 16px;
-    height: 16px;
     margin-top: 3px;
     margin-right: 0;
+    width: 16px;
+    height: 16px;
 }
 
 .mapboxgl-ctrl-geocoder--input {

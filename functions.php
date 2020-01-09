@@ -108,6 +108,10 @@ function rossross_manage_admin_bar(){
 	$wp_admin_bar->remove_menu('comments');
 }
 
+/**= Add Custom Post Types and Taxonomies =**/
+
+require_once ('custom-post-types.php');
+
 /* ADD CUSTOM RESPONSIVE IMAGE SIZES
 ================================================== */
 
@@ -143,3 +147,5 @@ add_filter('wp_calculate_image_sizes', 'aw_custom_responsive_image_sizes', 10 , 
  return $columns;
 }
 add_filter('manage_edit-category_columns','manage_my_category_columns');
+
+show_admin_bar(false);

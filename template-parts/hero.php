@@ -7,17 +7,37 @@ endif;?>
 
 <div class="hero <?php the_field('hero_height');?>" style="background-image: url(<?php echo $heroImage['url']; ?>); background-color: <?php echo $heroColor; ?>;">
 
-    <div class="container cols-3-12-6-3">
-        <div class="col"></div>
+    <div class="container">
 		<div class="col">
-		    <div class="hero__content">
+		    <div class="hero__content <?php if (is_page_template('page-templates/home.php')) {?>home_hero<?php }?>">
                 <div class="inner-section">
-                    <h1 class="heading heading__md heading__light mt0 mb0"></h1>
+                	<div class="company-title">
+                		<?php if (is_page_template('page-templates/home.php')) {?>
+                			<?php 
+                            $logo = get_field("logo", "options");?>
+                            <img src="<?php echo $logo["url"];?>"/>
+                		<?php } elseif ('case_studies' == get_post_type()) {?>
+                			<span class="case_study_title">Case Study</span>
+	                	<?php } ?>
+	                    <h1 class="heading heading__md heading__light mt0 mb0 slow-fade">
+	                    	<?php the_field('hero_heading');?>
+	                    </h1>
+	                    <h2 class="slow-fade">
+	                    	<?php the_field('hero_subheading');?>
+	                    </h2>
+	                </div>
+	                <div class="company-copy">
+	                    <h3 class="slow-fade delay">
+	                    	<?php the_field('hero_copy');?>
+	                    </h3>
+	                </div>
+	                <div id="scroll-icon">
+	                	<?php if( have_rows('button') ):
+    						while( have_rows('button') ): the_row(); ?>
+	                			<a href="<?php the_sub_field('button_target');?>" class="explore"><span></span></a>
+	                	<?php endwhile; endif;?>
+	                </div>
                 </div>
-				<!--<div class="buttons">
-					<a href=""  class="">Button Text</a>
-					<a href="">Button Text</a>
-				</div>-->
 		    </div>
 		</div>
 	</div>

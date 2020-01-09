@@ -24,7 +24,7 @@ body {
 }
 
 h2, .h2 {
-	font-size: 2.5em;
+	font-size: 2em;
 }
 
 h3, .h3 {
@@ -94,7 +94,7 @@ a {
 
     &:hover {
         text-decoration: none;
-        color: $brand-dark-grey;
+        color: $brand-primary;
     }  
     
     i {
@@ -228,7 +228,7 @@ header {
     position: fixed;
     width: 100%;
     font-family: $body-font;
-    background:$brand-primary;
+    background:transparent;
     z-index: 1000;
     transition: all 0.5s ease;
     padding-left: 1em;
@@ -281,10 +281,6 @@ header {
     .contact {
         display: grid;
         width: 100%;
-        height: calc(100% - 2em);
-        padding: 0.5em 2em;
-        margin: 1em 0;
-        border-right: 1px solid white;
         text-align: right;
         transition: padding-top 1s ease;
         
@@ -310,10 +306,7 @@ header {
 nav {
     display: grid;
 	width: 100%;
-    height: calc(100% - 2em);
 	padding:0 3em;
-	margin:1em 0;
-	border-left: 1px solid white;
 	border-right: 1px solid white;
 	
 	.menu-trigger {
@@ -410,7 +403,6 @@ nav {
 
 .mainMenu {
 	width: 100%;
-	padding-bottom: 0.75em;
 	align-self: flex-end;
 	text-align: center;
 	z-index: 50;
@@ -441,7 +433,14 @@ nav {
 }
 
 .scrolled header {
-    background:$brand-secondary;
+    background:white;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+    a{
+        color: $brand-dark-grey
+    }
+    nav{
+        border-right: 1px solid $brand-dark-grey
+    }
 }
 
 .scrolled .secondaryMenu,
@@ -462,14 +461,6 @@ nav {
     margin-bottom: 0;
 }
 
-.scrolled .mainMenu {
-    padding-bottom: 1em;
-}
-
-.scrolled .contact {
-    padding-top:1em;
-}
-
 /*===========FOOTER==========*/
 
 footer {
@@ -484,7 +475,7 @@ footer {
 	
 	.pre-socket {
 		padding: 2em 1em;
-		background: $brand-primary;
+		background: $brand-secondary;
 		color: $brand-tertiary;
 		
 		.socials a {
@@ -502,7 +493,7 @@ footer {
 	
 	.socket {
 		letter-spacing: 1px;
-		background: $brand-primary;
+		background: $brand-secondary;
 		color: white;
 		padding: 1em;
 		

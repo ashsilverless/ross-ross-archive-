@@ -133,7 +133,36 @@
 
 */
 .container {
-    
+    &.cols-offset2-20 {
+        >.col {
+            grid-column-start:3;     
+            grid-column-end:23;     
+        }       
+    }
+    &.cols-offset2-9-2-9 {
+
+        >.col:nth-of-type(4n -3) {
+            grid-column-start:3;     
+            grid-column-end:12;    
+        }
+        >.col:nth-of-type(4n -2) { 
+            grid-column: span 2;     
+        }    
+        >.col:nth-of-type(4n -1) { 
+            grid-column: span 9;     
+        }     
+    }
+    &.cols-offset2-8-8{
+
+        >.col:nth-of-type(3n -2) {
+            grid-column-start:3;     
+            grid-column-end:11;    
+        }   
+        >.col:nth-of-type(3n -1) { 
+            grid-column-start:14;
+            grid-column-end:22;      
+        }     
+    }
     &.cols-3-12-6-3 {
         >.col:nth-of-type(4n - 3) {
             grid-column: span 3;      
@@ -178,44 +207,88 @@
             grid-column: span 6;     
         }     
     }
-
-
-    &.cols-14-10 {
-        >.col:nth-of-type(2n -1) {
-            grid-column: span 14;     
-        }       
-        >.col:nth-of-type(2n) {
-            grid-column: span 10;     
-        }   
-    }
-
-    &.cols-14-10 {
-        >.col:nth-of-type(2n -1) {
-            grid-column: span 14;     
-        }       
-        >.col:nth-of-type(2n) {
-            grid-column: span 10;     
-        }   
-    }
-
-    &.cols-16-8 {
-        >.col:nth-of-type(2n -1) {
-            grid-column: span 16;     
-        }       
-        >.col:nth-of-type(2n) {
-            grid-column: span 8;     
-        }   
-    }
-
-    &.cols-8-16 {
-        >.col:nth-of-type(2n -1) {
-            grid-column: span 8;     
-        }       
-        >.col:nth-of-type(2n) {
-            grid-column: span 16;     
-        }   
-    }
     
+    &.cols-offset4-16  {
+        >.col {
+            grid-column-start:6;     
+            grid-column-end:20;    
+        }    
+    }
+    &.cols-offset5-14  {
+        >.col {
+            grid-column-start:8;     
+            grid-column-end:18;    
+        }    
+    }
+
+    &.cols-14-10 {
+        >.col:nth-of-type(2n -1) {
+            grid-column: span 14;     
+        }       
+        >.col:nth-of-type(2n) {
+            grid-column: span 10;     
+        }   
+    }
+
+    &.cols-14-10 {
+        >.col:nth-of-type(2n -1) {
+            grid-column: span 14;     
+        }       
+        >.col:nth-of-type(2n) {
+            grid-column: span 10;     
+        }   
+    }
+
+    &.cols-8-4 {
+        >.col:nth-of-type(2n -1) {
+            grid-column: span 8;     
+        }       
+        >.col:nth-of-type(2n) {
+            grid-column: span 4;     
+        }   
+    }
+
+    &.cols-4-8 {
+        >.col:nth-of-type(2n -1) {
+            grid-column: span 4;     
+        }       
+        >.col:nth-of-type(2n) {
+            grid-column: span 8;     
+        }   
+    }
+    &.cols-10-10-4{
+        >.col:nth-of-type(3n - 2) {
+            grid-column: span 10;
+        }
+        >.col:nth-of-type(3n -1) {
+            grid-column: span 10;
+        }
+        >.col:nth-of-type(3n) {
+            grid-column: span 4;
+        }
+    }
+    &.cols-7-10-7{
+        >.col:nth-of-type(3n - 2) {
+            grid-column: span 7;
+        }
+        >.col:nth-of-type(3n -1) {
+            grid-column: span 10;
+        }
+        >.col:nth-of-type(3n) {
+            grid-column: span 7;
+        }
+    }
+    &.cols-10-4-10{
+        >.col:nth-of-type(3n - 2) {
+            grid-column: span 10;
+        }
+        >.col:nth-of-type(3n -1) {
+            grid-column: span 2;
+        }
+        >.col:nth-of-type(3n) {
+            grid-column: span 10;
+        }
+    }
 }
 /*===========MEDIA QUERIES==========*/
 
