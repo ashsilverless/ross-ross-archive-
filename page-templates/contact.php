@@ -7,7 +7,7 @@
 get_header();?>
 
 <?php if( have_rows('page_settings') ):
-    while( have_rows('page_settings') ): the_row(); 
+    while( have_rows('page_settings') ): the_row();
     $image = get_sub_field('background_image');?>
 <div id="contact" style="background-image: url(<?php echo $image['url']; ?>);">
 	<div class="container">
@@ -20,7 +20,7 @@ get_header();?>
 			<div class="container cols-12 grid-gap cols-sm-24 no-sm-gutter text-left">
 				<?php if( have_rows('contact_info', 'options') ):
 		            		while( have_rows('contact_info', 'options') ): the_row(); ?>
-					<div class="col">
+					<div class="col contact-details">
 						<div>
 							<a href="tel:<?php the_sub_field("mobile"); ?>"><?php the_sub_field("mobile"); ?></a>
 						</div>

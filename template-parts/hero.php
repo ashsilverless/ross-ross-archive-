@@ -6,14 +6,19 @@ elseif ( get_field('hero_type') == 'color' ):
 endif;?>
 
 <div class="hero <?php the_field('hero_height');?>" style="background-image: url(<?php echo $heroImage['url']; ?>); background-color: <?php echo $heroColor; ?>;">
-
+	<div id="scroll-icon">
+		<?php if( have_rows('button') ):
+			while( have_rows('button') ): the_row(); ?>
+				<a href="<?php the_sub_field('button_target');?>" class="explore"><span></span></a>
+		<?php endwhile; endif;?>
+	</div>
     <div class="container">
 		<div class="col">
 		    <div class="hero__content <?php if (is_page_template('page-templates/home.php')) {?>home_hero<?php }?>">
                 <div class="inner-section">
                 	<div class="company-title">
                 		<?php if (is_page_template('page-templates/home.php')) {?>
-                			<?php 
+                			<?php
                             $logo = get_field("logo", "options");?>
                             <img src="<?php echo $logo["url"];?>"/>
                 		<?php } elseif ('case_studies' == get_post_type()) {?>
@@ -31,12 +36,7 @@ endif;?>
 	                    	<?php the_field('hero_copy');?>
 	                    </h3>
 	                </div>
-	                <div id="scroll-icon">
-	                	<?php if( have_rows('button') ):
-    						while( have_rows('button') ): the_row(); ?>
-	                			<a href="<?php the_sub_field('button_target');?>" class="explore"><span></span></a>
-	                	<?php endwhile; endif;?>
-	                </div>
+
                 </div>
 		    </div>
 		</div>
