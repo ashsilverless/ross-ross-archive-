@@ -5,7 +5,6 @@
 
 add_action( 'init', 'custom_post_type_case_studies', 0 );
 
-// ====== Camps
 function custom_post_type_case_studies() {
 
     $labels = array(
@@ -23,7 +22,7 @@ function custom_post_type_case_studies() {
         'not_found'           => __( 'Not Found',          'rossross' ),
         'not_found_in_trash'  => __( 'Not found in Trash', 'rossross' )
     );
-    
+
     $args = array(
         'label'               => __( 'case_studies', 'rossross' ),
         'description'         => __( 'Case Study', 'rossross' ),
@@ -42,6 +41,6 @@ function custom_post_type_case_studies() {
         'publicly_queryable'  => true,
         'capability_type'     => 'page'
     );
-    
+
     register_post_type( 'case_studies', $args );
 }
