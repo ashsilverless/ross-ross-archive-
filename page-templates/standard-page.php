@@ -27,12 +27,9 @@ $colour = get_field('page_colour');
 <?php if( have_rows('content') ):
     		while( have_rows('content') ): the_row(); ?>
 	<div id="content" class="boxed-content <?php echo $colour;?>">
-		<div class="container grid-gap container-small cols-12 cols-sm-24 no-sm-gutter ">
-			<div class="col">
+		<div class="container grid-gap container-small cols-24 no-sm-gutter ">
+			<div class="col content_double">
 				<?php the_sub_field('left_column');?>
-			</div>
-			<div class="col">
-				<?php the_sub_field('right_column');?>
 			</div>
 		</div>
 	</div>

@@ -39,9 +39,13 @@ $colour = get_field('page_colour')
 					<div class="phone"><a href="tel:<?php the_sub_field('mobile');?>"><?php the_sub_field('mobile');?></a></div>
 					<div class="phone"><a href="tel:<?php the_sub_field('phone');?>"><?php the_sub_field('phone');?></a></div>
 					<div class="email"><a href="mailto:<?php the_sub_field('email');?>"><?php the_sub_field('email');?></a></div>
-					<?php the_sub_field('info');?>
+					<div>
+						<?php the_sub_field('info');?>
+					</div>
 					<?php if( get_sub_field('additional_info') ): ?>
-						<?php the_sub_field('additional_info');?>
+						<div>
+							<?php the_sub_field('additional_info');?>
+						</div>
 						<a class="button read-more button-alt" href="#"><span>Read More</span></a>
 					<?php endif; ?>
 				</div>
